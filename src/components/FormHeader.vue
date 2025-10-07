@@ -19,20 +19,18 @@ const stepperSteps = computed(() =>
     <nav class="form__nav" aria-labelledby="nav-heading">
       <h2 class="sr-only" id="nav-heading">Form steps</h2>
 
-      <nav aria-label="Form steps">
-        <ol class="form__stepper">
-          <li
-            v-for="step in stepperSteps"
-            :key="'step-' + step.id"
-            class="stepper__item"
-            :class="{ current: step.id === multiStepFormStore.getDisplayStep }"
-            :data-step="step.id"
-          >
-            <span class="stepper__item-label">Step {{ step.id }}</span>
-            <span class="stepper__item-description">{{ step.description }}</span>
-          </li>
-        </ol>
-      </nav>
+      <ol class="form__stepper">
+        <li
+          v-for="step in stepperSteps"
+          :key="'step-' + step.id"
+          class="stepper__item"
+          :class="{ current: step.id === multiStepFormStore.getDisplayStep }"
+          :data-step="step.id"
+        >
+          <span class="stepper__item-label">Step {{ step.id }}</span>
+          <span class="stepper__item-description">{{ step.description }}</span>
+        </li>
+      </ol>
     </nav>
     <!-- Sidebar end -->
   </header>
