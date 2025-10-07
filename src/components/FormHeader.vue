@@ -15,8 +15,8 @@ const stepperSteps = computed(() =>
   <header class="form__header">
     <h1 class="sr-only">Multi-step form</h1>
 
-    <!-- Sidebar start -->
-    <nav class="form__nav" aria-labelledby="nav-heading">
+    <!-- Stepper start -->
+    <div class="form__nav" aria-labelledby="nav-heading">
       <h2 class="sr-only" id="nav-heading">Form steps</h2>
 
       <ol class="form__stepper">
@@ -31,8 +31,8 @@ const stepperSteps = computed(() =>
           <span class="stepper__item-description">{{ step.description }}</span>
         </li>
       </ol>
-    </nav>
-    <!-- Sidebar end -->
+    </div>
+    <!-- Stepper end -->
   </header>
 </template>
 
