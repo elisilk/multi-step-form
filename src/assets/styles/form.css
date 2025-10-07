@@ -1,0 +1,392 @@
+/* Form -- overall layout */
+
+.form__main {
+  border-radius: var(--br-400);
+  background-color: var(--form-color-background);
+  box-shadow: var(--shadow1);
+  padding: var(--space-400) var(--space-300);
+}
+
+.form__main > * + * {
+  margin-block-start: var(--space-400); /* (m) 32px -> (t) 40px -> (d) 48px */
+}
+
+.form__step > * + * {
+  margin-block-start: var(--space-300); /* (m) 24px -> (t) 32px -> (d) 40px */
+}
+
+.step__header > * + * {
+  margin-block-start: var(--space-100);
+}
+
+.step__heading {
+  color: var(--text-color-headings);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-300);
+}
+
+.step__main > .form__fieldset + .form__fieldset {
+  margin-block-start: var(--space-300); /* (m) 24px -> (d) 32px */
+}
+
+/* Input -- Fieldsets (groups) */
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form__fieldset--textgroup > .input__container + .input__container {
+  margin-block-start: var(--space-200); /* (m) 16px -> (t) 24px */
+}
+
+/* Input -- Radio */
+
+.label__title {
+  grid-area: title;
+  color: var(--input-text-label);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-300);
+}
+
+.label__price {
+  grid-area: price;
+  color: var(--input-text-sublabel);
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+}
+
+.label__icon {
+  grid-area: icon;
+}
+
+.label__discount {
+  grid-area: discount;
+  color: var(--input-text-label);
+  font-size: var(--fs-200);
+  line-height: var(--lh-300);
+}
+
+/* Input -- Switch */
+
+.form__fieldset--switchgroup {
+  border-radius: var(--br-300);
+  background-color: var(--input-background-color-selected);
+  block-size: 48px;
+  display: grid;
+  place-content: center;
+}
+
+/* Input -- Checkbox */
+
+.input__container--checkbox {
+  position: relative;
+}
+
+.input--checkbox {
+  cursor: pointer;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.input__label--checkbox {
+  cursor: pointer;
+  display: grid;
+  grid-template-areas:
+    'checkbox title price'
+    'checkbox details price';
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: var(--space-200);
+  column-gap: var(--space-200);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--br-300);
+}
+
+.input__container--checkbox:has(:hover) .input__label--checkbox,
+.input__container--checkbox:has(:focus-visible) .input__label--checkbox {
+  border: 1px solid var(--input-border-color-active);
+}
+
+.input__container--checkbox:has(:focus-visible) .input__label--checkbox {
+  outline: 1px dashed var(--input-border-color-active);
+  outline-offset: 2px;
+}
+
+.label__details {
+  grid-area: details;
+}
+
+.input__label--checkbox .label__title {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-400);
+}
+
+.input__label--checkbox .label__details {
+  color: var(--input-text-sublabel);
+  font-size: var(--fs-200);
+  line-height: var(--lh-300);
+}
+
+.input__label--checkbox .label__price {
+  color: var(--checkbox-text-color-price);
+  font-size: var(--fs-200);
+  line-height: var(--lh-300);
+}
+
+.label__checkbox {
+  grid-area: checkbox;
+  aspect-ratio: 1 / 1;
+  inline-size: 1.25rem;
+  padding: 3px;
+  color: var(--checkbox-color);
+  background-color: var(--checkbox-background-color);
+  border-radius: var(--br-200);
+  border: 1px solid var(--checkbox-color);
+  display: grid;
+  place-content: center;
+}
+
+.label__checkbox-icon {
+  display: none;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.input__container--checkbox:has(:checked) .input__label--checkbox {
+  background-color: var(--input-background-color-selected);
+}
+
+.input__container--checkbox:has(:checked) .label__checkbox {
+  color: var(--checkbox-color-selected);
+  background-color: var(--checkbox-background-color-selected);
+  border: 1px solid var(--checkbox-background-color-selected);
+}
+
+.input__container--checkbox:has(:checked) .label__checkbox-icon {
+  display: block;
+}
+
+/* Output */
+
+.form__fieldset--summary-itemized {
+  background-color: var(--output-background-color-itemized);
+  border-radius: var(--br-300);
+  padding: var(--space-200);
+}
+
+.form__fieldset--summary-itemized > .output__container + .output__container {
+  margin-block-start: var(--space-200); /* (m) 16px -> (t) 24px */
+}
+
+/* workaround for the :first-of-class selector */
+.output__container--add-on {
+  border-block-start: 1px solid var(--output-divider-color);
+  padding-block-start: var(--space-200);
+}
+
+.output__container--add-on ~ .output__container--add-on {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+.form__fieldset--summary-total {
+  padding-inline: var(--space-200);
+}
+
+.output__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output__label {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-300);
+}
+
+.output__label--plan {
+  color: var(--text-color-headings);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-400);
+  display: grid;
+  justify-items: start;
+}
+
+.output {
+  color: var(--text-color-headings);
+  line-height: var(--lh-300);
+}
+
+.output--plan {
+  font-weight: var(--fw-bold);
+}
+
+.output--total {
+  color: var(--output-text-color-total);
+  font-size: var(--fs-400); /* (m) 16px -> (t) 20px */
+  font-weight: var(--fw-bold);
+}
+
+.button--change {
+  border-radius: var(--br-200);
+  color: var(--button-change-text-color);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-300);
+}
+
+.button--change:hover,
+.button--change:focus-visible {
+  color: var(--button-change-text-color-active);
+}
+
+.button--change:focus-visible {
+  outline: 1px dashed var(--button-change-text-color-active);
+  outline-offset: 2px;
+}
+
+/* Thank you */
+
+.form__step--thank-you > .step__main {
+  display: grid;
+  grid-template-areas:
+    'icon'
+    'heading'
+    'description';
+  justify-items: center;
+  margin-block: var(--space-1000);
+}
+
+.form__step--thank-you > .step__main > * + * {
+  margin-block-start: 0;
+}
+
+.form__step--thank-you > .step__main > .step__heading {
+  grid-area: heading;
+  margin-block-start: var(--space-300); /* (m) 24px -> (t) 32px */
+}
+
+.form__step--thank-you > .step__main > .step__description {
+  grid-area: description;
+  text-align: center;
+  margin-block-start: var(--space-100); /* (m) 8px -> (t) 16px */
+}
+
+.form__step--thank-you > .step__main > .step__icon {
+  grid-area: icon;
+}
+
+.form__link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.form__link:hover,
+.form__link:focus-visible {
+  color: var(--text-color-active);
+}
+
+.form__link:focus-visible {
+  outline: 1px dashed var(--text-color-active);
+  outline-offset: 2px;
+}
+
+/* viewport: mobile -> tablet */
+@media (min-width: 46rem) {
+  .form__main {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .form__main > * + * {
+    margin-block-start: var(--space-500); /* (m) 32px -> (t) 40px -> (d) 48px */
+  }
+
+  .form__step > * + * {
+    margin-block-start: var(--space-400); /* (m) 24px -> (t) 32px -> (d) 40px */
+  }
+
+  .step__heading {
+    font-size: var(--fs-800);
+  }
+
+  .step__main > .form__fieldset + .form__fieldset {
+    margin-block-start: var(--space-400); /* (m) 24px -> (d) 32px */
+  }
+
+  .form__fieldset--textgroup > .input__container + .input__container {
+    margin-block-start: var(--space-300); /* (m) 16px -> (t) 24px */
+  }
+
+  .form__fieldset--checkboxgroup > .input__container + .input__container {
+    margin-block-start: var(--space-200); /* (m) 8px -> (t) 16px */
+  }
+
+  .input__label--checkbox {
+    padding: var(--space-200) var(--space-300);
+    row-gap: var(--space-100);
+  }
+
+  .input__label--checkbox .label__title {
+    font-size: var(--fs-400);
+    line-height: var(--lh-300);
+  }
+
+  .input__label--checkbox .label__details {
+    font-size: var(--fs-300);
+  }
+
+  .input__label--checkbox .label__price {
+    font-size: var(--fs-300);
+  }
+
+  .output__label--plan {
+    font-size: var(--fs-400); /* (m) 14px -> (t) 16px */
+  }
+
+  .output--total {
+    font-size: var(--fs-500); /* (m) 16px -> (t) 20px */
+  }
+
+  .form__step--thank-you > .step__main > .step__heading {
+    margin-block-start: var(--space-400); /* (m) 24px -> (t) 32px */
+  }
+
+  .form__step--thank-you > .step__main > .step__description {
+    margin-block-start: var(--space-200); /* (m) 8px -> (t) 16px */
+  }
+}
+
+/* viewport: tablet -> desktop */
+@media (min-width: 60rem) {
+  .form__main > * + * {
+    margin-block-start: var(--space-600); /* (m) 32px -> (t) 40px -> (d) 48px */
+  }
+
+  .form__step > * + * {
+    margin-block-start: var(--space-500); /* (m) 24px -> (t) 32px -> (d) 40px */
+  }
+
+  .label__discount {
+    margin-block-start: var(--space-100);
+  }
+
+  .input__label--checkbox {
+    column-gap: var(--space-300);
+  }
+
+  .form__fieldset--summary-itemized {
+    padding: var(--space-200) var(--space-300);
+  }
+}

@@ -1,0 +1,116 @@
+@import '@/assets/styles/base.css';
+
+/* semantic properties */
+:root {
+  /* colors */
+
+  --text-color-primary: hsl(var(--color-grey-500));
+  --text-color-headings: hsl(var(--color-blue-950));
+  --text-color-active: hsl(var(--color-purple-600));
+
+  --body-color-background: hsl(var(--color-blue-100));
+
+  --header-color-background: hsl(var(--color-purple-600));
+  --form-color-background: hsl(var(--color-white));
+
+  --stepper-text-color: hsl(var(--color-white));
+  --stepper-text-color-accent: hsl(var(--color-blue-300));
+  --stepper-text-color-current: hsl(var(--color-blue-950));
+  --stepper-background-color-current: hsl(var(--color-blue-200));
+
+  --input-text: hsl(var(--color-blue-950));
+  --input-text-label: hsl(var(--color-blue-950));
+  --input-text-sublabel: hsl(var(--color-grey-500));
+  --input-text-placeholder: hsl(var(--color-grey-500));
+  --input-text-error: hsl(var(--color-red-500));
+  --input-border-color: hsl(var(--color-purple-200));
+  --input-border-color-active: hsl(var(--color-purple-600));
+  --input-border-color-error: hsl(var(--color-red-500));
+  --input-border-color-selected: hsl(var(--color-purple-600));
+  --input-background-color-selected: hsl(var(--color-blue-50));
+
+  --switch-background-color: hsl(var(--color-blue-950));
+  --switch-background-color-active: hsl(var(--color-purple-600));
+  --switch-toggle-color: hsl(var(--color-white));
+
+  --checkbox-color: hsl(var(--color-purple-200));
+  --checkbox-color-selected: hsl(var(--color-white));
+  --checkbox-background-color: hsl(var(--color-white));
+  --checkbox-background-color-selected: hsl(var(--color-purple-600));
+  --checkbox-text-color-price: hsl(var(--color-purple-600));
+
+  --button-text-color: hsl(var(--color-white));
+  --button-text-color-inverted: hsl(var(--color-grey-500));
+  --button-text-color-inverted-active: hsl(var(--color-blue-950));
+  --button-background-color: hsl(var(--color-blue-950));
+  --button-background-color-active: hsl(var(--color-blue-700));
+  --button-background-color-highlight: hsl(var(--color-purple-600));
+  --button-background-color-highlight-active: hsl(var(--color-purple-400));
+
+  --button-change-text-color: hsl(var(--color-grey-500));
+  --button-change-text-color-active: hsl(var(--color-purple-600));
+
+  --output-divider-color: hsl(var(--color-grey-500) / 20.43%);
+  --output-background-color-itemized: hsl(var(--color-blue-50));
+  --output-text-color-total: hsl(var(--color-purple-600));
+
+  /* sizing/spacing */
+
+  /* app defaults */
+  --main-inline-size-max: 58.75rem; /* 940px */
+  --main-inline-size-gutter: 41px; /* (m) 0px -> (t) 41px */
+
+  --main-block-size-gap: 32px; /* (m) 32px -> (t) ?px */
+  --main-block-size-overlap: 75px; /* (m) 75px -> (t) ?px */
+
+  /* form container sizes tablet -> desktop viewports */
+
+  /* padding-inline-end: (t) 58px -> (d) 100px */
+  /* padding-block-start: (t) 43px -> (d) 47px */
+  /* padding-block-end: (t) 32px -> (d) 48px */
+  --form-padding-inline-end: clamp(3.625rem, -7.3125rem + 21.875vw, 6.25rem);
+  --form-padding-block-start: clamp(
+    2.6875rem,
+    1.6458333333333335rem + 2.083333333333333vw,
+    2.9375rem
+  );
+  --form-padding-block-end: clamp(2rem, -2.166666666666666rem + 8.333333333333332vw, 3rem);
+
+  /* col 1 (header): (t) 238px -> (d) 306px */
+  /* col 2 (main): (t) 348px -> (d) 450px */
+  --form-col1-inline-size: clamp(
+    14.875rem,
+    -2.833333333333332rem + 35.416666666666664vw,
+    19.125rem
+  );
+  --form-col2-inline-size: clamp(21.75rem, -4.8125rem + 53.125vw, 28.125rem);
+}
+
+/* viewport: mobile -> tablet */
+/* @media (min-width: 46rem) {
+  :root {
+  }
+} */
+
+/* viewport: tablet -> desktop */
+/* @media (min-width: 60rem) {
+  :root {
+  }
+} */
+
+/* -------------------- */
+/* Body / App           */
+/* -------------------- */
+
+body {
+  color: var(--text-color-primary);
+  background-color: var(--body-color-background);
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-400);
+  line-height: var(--lh-400);
+
+  margin: 0;
+  padding: 0;
+}

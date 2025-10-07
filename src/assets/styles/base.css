@@ -1,0 +1,226 @@
+/* -------------------- */
+/* Breakpoints          */
+/* -------------------- */
+
+/* Media query breakpoints (min-widths) */
+
+/* 26rem = 416px -- mobile -> larger mobile */
+/* 46rem = 736px -- mobile -> tablet */
+/* 60rem = 960px -- tablet -> desktop */
+
+/* max-container-inline-size: 1022px */
+
+/* Fluid min -> max viewport sizes */
+
+/* (m) mobile -> (t) tablet */
+/* 25rem = 400px */
+/* 45rem = 720px */
+
+/* (t) tablet -> (d) desktop */
+/* 50rem = 800px */
+/* 62rem = 992px */
+
+/* Container query units */
+
+/* cqi (min) -> (max) */
+/* 20rem = 320px */
+/* 25rem = 400px */
+
+/* -------------------- */
+/* Fonts                */
+/* -------------------- */
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400; /* regular */
+  font-display: swap;
+  src: url('@/assets/fonts/Ubuntu-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500; /* medium */
+  font-display: swap;
+  src: url('@/assets/fonts/Ubuntu-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700; /* bold */
+  font-display: swap;
+  src: url('@/assets/fonts/Ubuntu-Bold.woff2') format('woff2');
+}
+
+/* -------------------- */
+/* Custom properties    */
+/* -------------------- */
+
+/* general design system properties */
+:root {
+  /* color palette */
+  --color-white: 0 100% 100%; /* hex FFFFFF / rgb 255 255 255 */
+  --color-black: 0 0% 0%; /* hex 000000 / rgb 0 0 0 */
+
+  --color-grey-500: 231 11% 63%; /* hex 9699AA / rgb 150, 153, 170 */
+
+  --color-orange-300: 23 100% 75%; /* hex FFAF7E / rgb 255, 175, 126 */
+
+  --color-red-500: 354 84% 57%; /* hex EE374A / rgb 238, 55, 74 */
+  --color-red-450: 353 76% 65%; /* hex E96170 / rgb 233, 97, 112 */
+  --color-red-400: 354 91% 74%; /* hex F9818E / rgb 249, 129, 142 */
+
+  --color-purple-600: 243 100% 62%; /* hex 483EFF / rgb 72, 62, 255 */
+  --color-purple-500: 243 100% 67%; /* hex 6259FF / rgb 98, 89, 255 */
+  --color-purple-400: 243 100% 77%; /* hex 928CFF / rgb 146, 140, 255 */
+  --color-purple-200: 229 24% 87%; /* hex D6D9E6 / rgb 214, 217, 230 */
+
+  --color-blue-950: 213 96% 18%; /* hex 022959 / rgb 2, 41, 89 */
+  --color-blue-700: 213 73% 31%; /* hex 164A8A / rgb 22, 74, 138 */
+  --color-blue-300: 228 100% 84%; /* hex ABBCFF / rgb 171, 188, 255 */
+  --color-blue-200: 206 94% 87%; /* hex BEE2FD / rgb 190, 226, 253 */
+  --color-blue-100: 218 100% 97%; /* hex EFF5FF / rgb 239, 245, 255 */
+  --color-blue-50: 231 100% 99%; /* hex F8F9FF / rgb 248, 249, 255 */
+
+  /* shadows & gradients */
+  --shadow1: 0 25px 40px -20px hsl(var(--color-black) / 9.51%);
+
+  /* font-families */
+  --ff-base: 'Ubuntu', sans-serif;
+
+  /* font-weights */
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+
+  /* font-sizes */
+  --fs-800: 2rem; /* 32px */
+  --fs-600: 1.5rem; /* 24px */
+  --fs-500: 1.25rem; /* 20px */
+  --fs-400: 1rem; /* 16px */
+  --fs-300: 0.875rem; /* 14px */
+  --fs-200: 0.75rem; /* 12px */
+
+  /* font-sizes -- fluid */
+
+  /* line height */
+  --lh-400: 150%;
+  --lh-300: 120%;
+
+  /* letter-spacing */
+  --ls-500: 1px;
+  --ls-400: 0px;
+
+  /* spacing */
+  --space-1000: 5rem; /* 80px */
+  --space-900: 4.5rem; /* 72px */
+  --space-800: 4rem; /* 64px */
+  --space-700: 3.5rem; /* 56px */
+  --space-600: 3rem; /* 48px */
+  --space-500: 2.5rem; /* 40px */
+  --space-400: 2rem; /* 32px */
+  --space-300: 1.5rem; /* 24px */
+  --space-200: 1rem; /* 16px */
+  --space-100: 0.5rem; /* 8px */
+
+  /* spacing -- fluid */
+
+  /* border radii */
+  --br-500: 15px;
+  --br-400: 10px;
+  --br-300: 8px;
+  --br-200: 4px;
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ol,
+ul,
+figure,
+picture {
+  margin: 0;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* make images easier to work with */
+img,
+svg,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* prevent lastpass icon from adding an extra grid row */
+[data-lastpass-icon-root] {
+  grid-area: input;
+}
+
+/* -------------------- */
+/* Body Setup           */
+/* -------------------- */
+
+body {
+  min-inline-size: 20rem; /* 320px */
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  min-block-size: 100dvb;
+}
+
+/* -------------------- */
+/* Utility classes      */
+/* -------------------- */
+
+/* screen reader only */
+
+.sr-only {
+  position: absolute;
+  width: 0.0625rem; /* 1px */
+  height: 0.0625rem; /* 1px */
+  padding: 0;
+  margin: -0.0625rem; /* -1px */
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
