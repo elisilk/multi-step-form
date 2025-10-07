@@ -66,8 +66,6 @@ As always, so many cool :sunglasses: things. Here are some of the key resources 
 
 #### Testing the App
 
-Hmm 🤔 ...
-
 - [Playwright](https://playwright.dev/)
   - [Playwright Getting Started](https://playwright.dev/docs/intro)
   - [Locators](https://playwright.dev/docs/locators)
@@ -173,6 +171,8 @@ Known issues - specific areas that the solution should be improved:
 - [ ] Check that all ARIA is being used appropriately. Especially with respect to:
   - [ARIA: aria-invalid attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
   - [ARIA: aria-errormessage attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
+- [ ] Move the styles from the global stylesheet to the respective components' scoped styles
+- [ ] Improve on the end-to-end testing implementation so that it covers each step of the form
 
 Feature requests - specific enhancements to make:
 
