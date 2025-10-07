@@ -89,7 +89,7 @@ const handleFormNextStep = () => {
     <div class="form__container">
       <FormHeader class="form__header" />
 
-      <main class="form__main">
+      <main class="form__main" aria-label="Multi-Step Form">
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
             <component :is="Component" @change-plan="handleFormChangePlan" />
