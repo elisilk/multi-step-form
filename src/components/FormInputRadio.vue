@@ -47,7 +47,7 @@ const showValidation = inject('showValidation')
 const radioGroupInvalidated = inject('radioGroupInvalidated')
 
 watch(showValidation, (newValue) => (newValue ? validate() : resetErrors()))
-watch(radioGroupInvalidated, () => validate())
+watch(radioGroupInvalidated, validate)
 </script>
 
 <template>
