@@ -58,8 +58,7 @@ Users should be able to:
 - [Vue](https://vuejs.org/)
 - [Pinia](https://pinia.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/)
-- [Vitest](https://vitest.dev/guide/)
-- [Vue Test Utils](https://test-utils.vuejs.org/guide/)
+- [Playwright](https://playwright.dev/)
 
 ### What I learned
 
