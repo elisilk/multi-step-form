@@ -26,16 +26,16 @@
   line-height: var(--lh-300);
 }
 
-.step__main > .form__fieldset + .form__fieldset {
-  margin-block-start: var(--space-300); /* (m) 24px -> (d) 32px */
-}
-
 /* Input -- Fieldsets (groups) */
 
 .form__fieldset {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.step__main > .form__fieldset + .form__fieldset {
+  margin-block-start: var(--space-300); /* (m) 24px -> (d) 32px */
 }
 
 .form__fieldset--textgroup > .input__container + .input__container {
@@ -68,16 +68,6 @@
   color: var(--input-text-label);
   font-size: var(--fs-200);
   line-height: var(--lh-300);
-}
-
-/* Input -- Switch */
-
-.form__fieldset--switchgroup {
-  border-radius: var(--br-300);
-  background-color: var(--input-background-color-selected);
-  block-size: 48px;
-  display: grid;
-  place-content: center;
 }
 
 /* Output */
@@ -190,6 +180,8 @@
 .form__step--thank-you > .step__main > .step__icon {
   grid-area: icon;
 }
+
+/* Form links */
 
 .form__link {
   color: currentColor;

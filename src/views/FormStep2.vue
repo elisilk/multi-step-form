@@ -85,10 +85,16 @@ function handleRadioInputValidated(invalid, message) {
 </template>
 
 <style scoped>
-/* Input -- Fieldsets (groups) */
-
 .form__fieldset--radiogroup {
   display: grid;
+}
+
+.form__fieldset--switchgroup {
+  border-radius: var(--br-300);
+  background-color: var(--input-background-color-selected);
+  block-size: 48px;
+  display: grid;
+  place-content: center;
 }
 
 .form__fieldset--radiogroup > .input__container + .input__container {

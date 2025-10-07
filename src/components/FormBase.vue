@@ -26,7 +26,7 @@ function handleFormSubmit() {
   if (!multiStepFormStore.isConfirmationStep) return false
 
   // check if the entire form is valid
-  if (form.value.checkValidity() === false) {
+  if (!form.value || form.value.checkValidity() === false) {
     console.log('Form Base (invalid) --> submit cancelled')
     return false
   }
@@ -67,7 +67,7 @@ const handleFormNextStep = () => {
   showValidation.value = true
 
   // if form (or current step?) is currently invalid, then cancel the move to next step request
-  if (form.value.checkValidity() === false) {
+  if (!form.value || form.value.checkValidity() === false) {
     console.log('Form Base (invalid) --> next step cancelled')
 
     // reset the focus to the first invalid input
