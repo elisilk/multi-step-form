@@ -95,10 +95,6 @@ function handleRadioInputValidated(invalid, message) {
   margin-block-start: var(--space-100); /* (m) 8px -> (d) 0px */
 }
 
-.form__fieldset--checkboxgroup > .input__container + .input__container {
-  margin-block-start: var(--space-100); /* (m) 8px -> (t) 16px */
-}
-
 .input__error--radiogroup {
   grid-row: 1;
   grid-column: 1 / -1;
